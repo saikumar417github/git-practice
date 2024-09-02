@@ -7,3 +7,5 @@ if [ $USERID -eq 0 ]; then
 else
     echo "please execute script with root user"
 fi
+
+dnf list installed ansible
