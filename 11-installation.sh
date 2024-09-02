@@ -21,3 +21,18 @@ if [ $? -ne 0 ]; then
 else
     echo "Ansible is already installed"
 fi
+
+dnf list installed mysql
+
+if [ $? -ne 0 ]; then
+    echo "mysql is not installed, going to install it.."
+    dnf install mysql -y
+    if [ $? -ne 0 ]; then
+        echo "mysql installation is incomplete, please check it"
+        exit 1
+    else
+        echo "mysql installation is completed successfully"
+    fi
+else
+    echo "mysql is already installed"
+fi
