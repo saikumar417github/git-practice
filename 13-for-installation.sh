@@ -25,10 +25,10 @@ CHECK_ROOT
 for package in $@; do
     dnf list installed $package
     if [ $? -ne 0 ]; then
-        echo "$PACKAGE is not installed, We are going to install it"
-        dnf install $PACKAGE -y
-        VALIDATE $? "Installing $PACKAGE"
+        echo "$package is not installed, We are going to install it"
+        dnf install $package -y
+        VALIDATE $? "Installing $package"
     else
-        echo "$PACKAGE is already installed"
+        echo "$package is already installed"
     fi
 done
