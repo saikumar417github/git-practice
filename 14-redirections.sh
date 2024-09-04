@@ -34,7 +34,7 @@ USAGE() {
 }
 CHECK_ROOT
 
-if [ $@ -eq 0 ]; then
+if [ $# -eq 0 ]; then
     USAGE
 fi
 
